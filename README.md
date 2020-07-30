@@ -3,6 +3,7 @@
 >>> pipenv shell
 #### press enter
 >>> python demonstrating_kmeans.py
+#### press enter
 
 ## To view my blog post on KMeans
 
