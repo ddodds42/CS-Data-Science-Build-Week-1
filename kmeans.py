@@ -11,6 +11,7 @@ class KMeansCluster:
     def __init__(self, k):
         self.k = k      # number of clusters you want it to identify
         self.means = None       # mean cluster point values
+        self.labels = None    # tracks points assignment to cluster
     
     def predict(self, input):
 
@@ -28,24 +29,22 @@ class KMeansCluster:
         '''
         # Assign self-means to k number of randomly selected input points
         self.means =  random.sample(list(inputs),self.k)
-        # tracks whether points were reassigned a new cluster
-        clusters = None
 
         # re-fit until there no points are reassigned new ss
         while True:
             # Predict and store each input's cluster membership
             recluster = list(map(self.predict, inputs))
 
-            if clusters == recluster:
+            if self.labels == recluster:
             # once no points are reassigned new clusters, return predictions
-                return self.means
+                return
             
             # Else, reasign cluster membership!
-            clusters = recluster
+            self.labels = recluster
 
             for i in range(self.k):
                 # Label and store which points were assigned to each cluster
-                coords = [c for c, m in list(zip(inputs, clusters)) if m == i]
+                coords = [c for c, m in list(zip(inputs, self.labels)) if m == i]
                 self.means[i] = np.mean(coords, axis=0)
 
 
