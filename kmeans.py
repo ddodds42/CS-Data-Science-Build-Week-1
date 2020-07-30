@@ -27,30 +27,26 @@ class KMeansCluster:
         Fits the K-Means instance to the data points you want analyzed for clusters
         '''
         # Assign self-means to k number of randomly selected input points
-        self.means =  random.sample(inputs, self.k)
+        self.means =  random.sample(list(inputs),self.k)
         # tracks whether points were reassigned a new cluster
         clusters = None
 
         # re-fit until there no points are reassigned new ss
         while True:
             # Predict and store each input's cluster membership
-            recluster = map(self.predict, inputs)
+            recluster = list(map(self.predict, inputs))
 
             if clusters == recluster:
             # once no points are reassigned new clusters, return predictions
-                return
+                return self.means
             
             # Else, reasign cluster membership!
             clusters = recluster
 
             for i in range(self.k):
                 # Label and store which points were assigned to each cluster
-                coords = [c for c, m in zip(inputs, clusters) if m == i]
-
-                if coords:
-                # Calctulate the new mean location of each cluster mean based
-                # on it's new cluster membership
-                    self.means[i] = list(np.mean(np.array([coords]), axis=0))
+                coords = [c for c, m in list(zip(inputs, clusters)) if m == i]
+                self.means[i] = np.mean(coords, axis=0)
 
 
 def optimal_k(inputs, k):
