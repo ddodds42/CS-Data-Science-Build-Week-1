@@ -6,12 +6,11 @@ THE PSEUDOCODE:
 Give it a CLASSY name:
     INITIALIZATION... the class takes as a parameter:
         K, or the number of clusters you want it to identify
-        And initializes with an empty variable for mean distance values
+        And initializes with an empty variable for mean cluster point values
     
     Function for PREDICTING cluster membership takes as parameters:
     A single input value (point in space), and the Kmean's class variables
-        For k number of means, calculates input's squared distance to said
-        pre-designated means
+        For k number of means, calculates input's squared distance to each mean,
     Returns the spatially closest k-mean
     
     Function for FITTING the K-Means instance to the data takes as parameters:
@@ -35,6 +34,14 @@ Give it a CLASSY name:
 
 
 OPTIMAL_K suplemental function to determine the best number of cluster:
+It takes as parameters the input points and a k value.
+    Instantiate a clustering class to use for iterating k values
+    Fit the clustering instance to the input value points
+    VAR_A to hold the means output when clustering
+    VAR_B to store cluster prediction labels with their input point
+    Sum the squared euclidean distance of each input to its cluster mean point
+    Return the sum
+
 
 SCIPYABLE euclidean_dist & squared_dist
 scipy.spatial.distance.euclidean()
