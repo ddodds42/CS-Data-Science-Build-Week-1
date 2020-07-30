@@ -10,7 +10,8 @@ Give it a CLASSY name:
     
     Function for PREDICTING cluster membership takes as parameters:
     A single input value (point in space), and the Kmean's class variables
-        For k number of means, calculates input's squared distance to each mean,
+        For k number of means, calculates input's squared distance to said
+        pre-designated means
     Returns the spatially closest k-mean
     
     Function for FITTING the K-Means instance to the data takes as parameters:
