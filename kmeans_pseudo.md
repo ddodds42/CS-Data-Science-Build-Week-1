@@ -47,4 +47,4 @@ It takes as parameters the input points and a k value.
 SCIPYABLE euclidean_dist & squared_dist
 scipy.spatial.distance.euclidean()
 
-NUMPYABLE means of np.dot(np.array([]), axis=0)
+NUMPYABLE means of np.mean(np.array([]), axis=0)
