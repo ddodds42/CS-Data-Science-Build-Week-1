@@ -13,18 +13,19 @@ class KMeansCluster:
         self.means = None       # mean cluster point values
     
     def predict(self, input):
-    '''
-    Function for PREDICTING cluster membership takes.
-    '''
-        eachk = range(self.k)
-        # calculates each input's squared distance to its mean
-        closest = min(eachk, key=lambda i: euclidean(input, self.means[i])**2)
-        return closest
+
+      '''
+      Function for PREDICTING cluster membership takes.
+      '''
+      eachk = range(self.k)
+      # calculates each input's squared distance to its mean
+      closest = min(eachk, key=lambda i: euclidean(input, self.means[i])**2)
+      return closest
     
     def fit(self, inputs):
-    '''
-    Fits the K-Means instance to the data points you want analyzed for clusters
-    '''
+        '''
+        Fits the K-Means instance to the data points you want analyzed for clusters
+        '''
         # Assign self-means to k number of randomly selected input points
         self.means =  random.sample(inputs, self.k)
         # tracks whether points were reassigned a new cluster
@@ -51,10 +52,11 @@ class KMeansCluster:
                 # on it's new cluster membership
                     self.means[i] = list(np.mean(np.array([coords]), axis=0))
 
+
 def optimal_k(inputs, k):
-'''
-suplemental function to determine the best number of clusters
-'''
+    '''
+    suplemental function to determine the best number of clusters
+    '''
     # Instantiate a clustering class to use for iterating k values
     klusterer = KMeansCluster(k)
     # Fit the clustering instance to the input value points
