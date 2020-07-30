@@ -1,4 +1,12 @@
-# CS Build Week I for Data Science Students
+## To compare my KMeans handcrafted to SKLearn
+### In terminal:
+>>> pipenv shell
+#### press enter
+>>> python demonstrating_kmeans.py
+
+## To view my blog post on KMeans
+
+## Parameters for the assignment
 
 For your first CS Build Week, you'll be implementing a few watershed
 algorithms that are very often used in the data science world. You've
@@ -9,11 +17,6 @@ like how you would if you'd imported the algorithm from a data science
 or machine learning library. 
 
 [Rubric](Rubric.md)
-
-## DS-specific help
-
-Drop into your DS cohort channel if you have questions that are beyond
-the reach of the CS TLs and/or instructor.
 
 ## Deliverables
 
