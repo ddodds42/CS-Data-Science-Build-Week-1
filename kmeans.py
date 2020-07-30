@@ -58,7 +58,5 @@ def optimal_k(inputs, k):
     klusterer.fit(inputs)
     # Store the means output when clustering
     means = klusterer.means
-    # Store cluster prediction labels with their input point
-    cluster = map(klusterer.predict, inputs)
     # squared distance of each input to its cluster mean point represents error
-    return sum(euclidean(i, means[k]) for i, k in zip(inputs, cluster))
+    return sum(euclidean(i, means[k])**2 for i, k in list(zip(inputs, klusterer.labels)))
