@@ -1,11 +1,12 @@
-## To compare my KMeans handcrafted to SKLearn
+## To compare my handcrafted KMeans with SKLearn's:
 ### In terminal:
 >>> pipenv shell
 #### press enter
 >>> python demonstrating_kmeans.py
 #### press enter
 
-## To view my blog post on KMeans
+## [To view my blog post on KMeans](https://medium.com/@davidadodds/k-means-3fea63d60ee7)
+Click that link ^^
 
 ## Parameters for the assignment
 
